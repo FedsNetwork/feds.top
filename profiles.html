@@ -5,14 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Feds | Users</title>
-<meta name="description" content="Fed's User list" />
 
-<meta property="og:title" content="Feds | Users" />
-<meta property="og:image" content="https://fedsgov.shop/assets/images/embed.png" />
-
-<meta name="theme-color" content="#FFF5EE" />
-
-<!-- FAVICON (RESTORED) -->
 <link rel="icon" href="data:,">
 <link rel="icon" href="assets/images/favi.ico">
 
@@ -22,7 +15,7 @@
 <style>
 body{
     margin:0;
-    font-family:'Inter',sans-serif;
+    font-family:Inter,sans-serif;
     background:#0a0a0a;
     color:white;
 }
@@ -31,7 +24,7 @@ body{
 nav{
     background:#000;
     border-bottom:2px solid #222;
-    padding:0.5rem 1rem;
+    padding:.5rem 1rem;
     position:sticky;
     top:0;
     z-index:999;
@@ -59,9 +52,8 @@ nav ul li a{
     text-decoration:none;
     font-weight:500;
 }
-nav ul li a:hover{
-    animation:rainbow 3s infinite;
-}
+nav ul li a:hover{animation:rainbow 3s infinite;}
+
 .hamburger{
     display:none;
     flex-direction:column;
@@ -82,7 +74,7 @@ nav ul li a:hover{
         top:50px;
         background:#000;
         border:1px solid #222;
-        padding:0.5rem;
+        padding:.5rem;
         flex-direction:column;
         width:150px;
     }
@@ -91,12 +83,8 @@ nav ul li a:hover{
 }
 
 @keyframes rainbow{
-    0%{color:red;}
-    17%{color:orange;}
-    33%{color:yellow;}
-    50%{color:green;}
-    67%{color:blue;}
-    84%{color:purple;}
+    0%{color:red;}17%{color:orange;}33%{color:yellow;}
+    50%{color:green;}67%{color:blue;}84%{color:purple;}
     100%{color:red;}
 }
 
@@ -106,12 +94,9 @@ nav ul li a:hover{
     margin:25px auto 60px;
     padding:0 15px;
 }
-h1{
-    text-align:center;
-    font-weight:500;
-}
+h1{text-align:center;font-weight:500}
 
-/* SEARCH / SORT */
+/* CONTROLS */
 .controls{
     display:flex;
     justify-content:center;
@@ -119,12 +104,11 @@ h1{
     flex-wrap:wrap;
     margin-bottom:12px;
 }
-input,select,button{
+input,select{
     background:#282828;
     border:none;
     color:white;
     padding:9px 12px;
-    font-size:14px;
 }
 .showing{
     text-align:center;
@@ -133,10 +117,10 @@ input,select,button{
     margin-bottom:20px;
 }
 
-/* RANK SECTIONS */
+/* RANK */
 .rank-section{
     margin-bottom:30px;
-    transition:max-height .35s ease, opacity .25s ease;
+    transition:max-height .35s ease,opacity .25s ease;
 }
 .rank-section.hidden{
     max-height:0;
@@ -146,7 +130,6 @@ input,select,button{
 }
 .rank-title{
     font-size:18px;
-    font-weight:500;
     margin-bottom:8px;
     display:flex;
     align-items:center;
@@ -166,13 +149,17 @@ td{
     text-align:left;
 }
 
-/* USER ROW (FIXED ALIGNMENT) */
-.user{
+/* CLICKABLE USER */
+.user-link{
     display:flex;
     align-items:center;
-    justify-content:flex-start;
     gap:8px;
-    position:relative;
+    text-decoration:none;
+    color:inherit;
+    width:100%;
+}
+.user-link:hover{
+    background:#111;
 }
 
 /* BADGES */
@@ -181,44 +168,35 @@ td{
     padding:3px 6px;
     border-radius:4px;
 }
-.admin-badge{background:#ff0000;}
-.feds-badge{background:#ff00d0;}
-.council-badge{background:#4f1cf6;}
+.admin-badge{background:#ff0000}
+.feds-badge{background:#ff00d0}
+.council-badge{background:#4f1cf6}
 
 /* GLOW */
 .admin-glow{
     animation:glow 1.5s infinite alternate;
 }
 @keyframes glow{
-    from{filter:drop-shadow(0 0 4px red);}
-    to{filter:drop-shadow(0 0 10px red);}
+    from{filter:drop-shadow(0 0 4px red)}
+    to{filter:drop-shadow(0 0 10px red)}
 }
 
-/* HIGHLIGHT */
-.highlight{
-    text-shadow:0 0 6px currentColor;
-}
+/* SEARCH HIGHLIGHT */
+.highlight{text-shadow:0 0 6px currentColor}
 
-/* MOBILE FIX — LEFT ALIGNED */
+/* MOBILE */
 @media(max-width:768px){
-    table,tbody,tr,td{
-        display:block;
-        width:100%;
-    }
+    table,tbody,tr,td{display:block;width:100%}
     tr{
-        margin-bottom:12px;
         background:#181818;
         border-radius:6px;
         padding:8px;
-    }
-    td{
-        padding:6px 0;
-        text-align:left;
+        margin-bottom:12px;
     }
     td::before{
         content:attr(data-label) ": ";
-        font-weight:500;
         color:#888;
+        font-weight:500;
     }
 }
 </style>
@@ -228,17 +206,13 @@ td{
 
 <nav>
 <div class="container">
-    <div class="nav-brand">
-        <a href="#">Feds</a>
-    </div>
-
+    <div class="nav-brand"><a href="#">Feds</a></div>
     <div class="hamburger" id="hamburger">
         <div></div><div></div><div></div>
     </div>
-
     <ul id="nav-links">
         <li><a href="index">Home</a></li>
-        <li><a href="#">Profiles</a></li>
+        <li><a href="profiles">Profiles</a></li>
         <li><a href="hoa">HOA</a></li>
         <li><a href="join">Discord</a></li>
     </ul>
@@ -251,9 +225,9 @@ td{
 <div class="controls">
 <input id="search" placeholder="Username...">
 <select id="sort">
-    <option value="id">Sort: ID</option>
-    <option value="az">A–Z</option>
-    <option value="za">Z–A</option>
+<option value="id">Sort: ID</option>
+<option value="az">A–Z</option>
+<option value="za">Z–A</option>
 </select>
 </div>
 
@@ -266,10 +240,10 @@ td{
 <tr data-id="1">
 <td data-label="ID">1</td>
 <td data-label="Username">
-<div class="user admin-glow">
-<span style="color:red;font-weight:bold;">Admin</span>
+<a class="user-link admin-glow" href="users/admin">
+<span style="color:red;font-weight:bold">Admin</span>
 <span class="badge admin-badge">ADMIN</span>
-</div>
+</a>
 </td>
 </tr>
 </tbody></table>
@@ -282,19 +256,19 @@ td{
 <tr data-id="2">
 <td data-label="ID">2</td>
 <td data-label="Username">
-<div class="user">
-<span style="color:#ff00d0;font-weight:bold;">Vile</span>
+<a class="user-link" href="users/vile">
+<span style="color:#ff00d0;font-weight:bold">Vile</span>
 <span class="badge feds-badge">FEDS</span>
-</div>
+</a>
 </td>
 </tr>
 <tr data-id="3">
 <td data-label="ID">3</td>
 <td data-label="Username">
-<div class="user">
-<span style="color:#ff00fb;font-weight:bold;">KeyKeyMfers</span>
+<a class="user-link" href="users/keykeymf">
+<span style="color:#ff00fb;font-weight:bold">KeyKeyMfers</span>
 <span class="badge feds-badge">FEDS</span>
-</div>
+</a>
 </td>
 </tr>
 </tbody></table>
@@ -307,19 +281,19 @@ td{
 <tr data-id="4">
 <td data-label="ID">4</td>
 <td data-label="Username">
-<div class="user">
-<span style="color:#4f1cf6;font-weight:bold;">DevNett</span>
+<a class="user-link" href="users/devnett">
+<span style="color:#4f1cf6;font-weight:bold">DevNett</span>
 <span class="badge council-badge">COUNCIL</span>
-</div>
+</a>
 </td>
 </tr>
 <tr data-id="5">
 <td data-label="ID">5</td>
 <td data-label="Username">
-<div class="user">
-<span style="color:#bb71e4;font-weight:bold;">Alex</span>
+<a class="user-link" href="users/alex">
+<span style="color:#bb71e4;font-weight:bold">Alex</span>
 <span class="badge council-badge">COUNCIL</span>
-</div>
+</a>
 </td>
 </tr>
 </tbody></table>
@@ -346,16 +320,16 @@ function apply(){
         const rows=[...sec.querySelectorAll('tr')];
 
         rows.forEach(r=>{
-            const name=r.querySelector('.user span').textContent.toLowerCase();
-            r.querySelector('.user span').classList.toggle('highlight',name.includes(q));
+            const name=r.querySelector('.user-link span').textContent.toLowerCase();
+            r.querySelector('.user-link span').classList.toggle('highlight',name.includes(q));
             r.style.display=name.includes(q)?'':'none';
             if(name.includes(q)){visible=true;total++}
         });
 
         rows.sort((a,b)=>{
             if(sort.value==='id') return a.dataset.id-b.dataset.id;
-            const A=a.querySelector('.user span').textContent;
-            const B=b.querySelector('.user span').textContent;
+            const A=a.querySelector('.user-link span').textContent;
+            const B=b.querySelector('.user-link span').textContent;
             return sort.value==='az'?A.localeCompare(B):B.localeCompare(A);
         }).forEach(r=>r.parentNode.appendChild(r));
 
