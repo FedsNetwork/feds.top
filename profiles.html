@@ -52,7 +52,9 @@ nav ul li a{
     text-decoration:none;
     font-weight:500;
 }
-nav ul li a:hover{animation:rainbow 3s infinite;}
+nav ul li a:hover{
+    animation:rainbow 3s infinite;
+}
 
 .hamburger{
     display:none;
@@ -149,17 +151,14 @@ td{
     text-align:left;
 }
 
-/* CLICKABLE USER */
+/* CLICKABLE USER — NO HOVER EFFECT */
 .user-link{
     display:flex;
     align-items:center;
     gap:8px;
-    text-decoration:none;
-    color:inherit;
     width:100%;
-}
-.user-link:hover{
-    background:#111;
+    color:inherit;
+    text-decoration:none;
 }
 
 /* BADGES */
@@ -172,7 +171,7 @@ td{
 .feds-badge{background:#ff00d0}
 .council-badge{background:#4f1cf6}
 
-/* GLOW */
+/* ADMIN GLOW */
 .admin-glow{
     animation:glow 1.5s infinite alternate;
 }
