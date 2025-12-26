@@ -65,6 +65,7 @@ body::before {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1rem;
 }
 
 /* 🔴 FULL RED GLITCH */
@@ -104,6 +105,7 @@ body::before {
 p {
   margin: 1rem 0 2rem;
   opacity: 0.8;
+  font-size: 1.5rem;
 }
 
 .btn {
@@ -133,6 +135,7 @@ footer {
   text-align: center;
   font-size: 0.85rem;
   opacity: 0.6;
+  padding: 0 1rem;
 }
 
 /* ANIMATIONS */
@@ -148,4 +151,36 @@ footer {
   60% { transform: translate(-2px, 1px); }
   80% { transform: translate(2px, -1px); }
   100% { transform: translate(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .glitch {
+    font-size: clamp(6rem, 18vw, 10rem);
+    letter-spacing: 0.2rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch {
+    font-size: clamp(4rem, 25vw, 8rem);
+    letter-spacing: 0.1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  footer {
+    font-size: 0.75rem;
+  }
 }
