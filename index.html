@@ -19,14 +19,17 @@
 
 <style>
 /* ===== Base ===== */
-body{
+html, body {
     margin:0;
+    padding:0;
     font-family:'Inter',sans-serif;
     background:#0a0a0a;
     color:#fff;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    scroll-behavior: smooth;
 }
 
-/* ===== Navbar (UNCHANGED FROM YOUR CODE) ===== */
+/* ===== Navbar ===== */
 nav {
     background:#000;
     padding:0.5rem 1rem;
@@ -97,12 +100,13 @@ nav ul li a:hover {
 
 /* ===== Hero ===== */
 .hero{
-    min-height:80vh;
+    height:100vh; /* full viewport height */
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
     padding:2rem 1rem;
+    box-sizing:border-box;
 }
 .hero h1{
     font-size:3rem;
@@ -148,7 +152,7 @@ nav ul li a:hover {
     font-weight:600;
 }
 
-/* ===== Grid (conflict.id inspired) ===== */
+/* ===== Grid ===== */
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -177,68 +181,6 @@ nav ul li a:hover {
 
 /* ===== Footer ===== */
 footer{
-    border-top:1px solid #222;
-    padding:1.5rem;
-    text-align:center;
-    color:#777;
-    font-size:0.85rem;
-}
-</style>
-</head>
-
-<body>
-
-<!-- Navbar -->
-<nav>
-  <div class="container">
-    <div class="nav-brand">
-      <a href="index">Feds</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-      <div></div><div></div><div></div>
-    </div>
-    <ul id="nav-links">
-      <li><a href="index">Home</a></li>
-      <li><a href="profiles">Profiles</a></li>
-      <li><a href="hoa">HOA</a></li>
-      <li><a href="join">Discord</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="hero">
-  <div>
-    <h1>/Feds</h1>
-    <p>
-      The Official hub for the /feds com.
-    </p>
-    <div class="hero-buttons">
-      <a href="#">Projects</a>
-      <a href="#">Pastes</a>
-      <a href="join">Discord</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <span class="copyright">© 2026 fedsgov.shop</span>
-    <div class="footer-middle">
-      <div class="footer-buttons">
-        <a href="terms" class="footer-btn">Terms of Service</a>
-        <a href="privacy" class="footer-btn">Privacy Policy</a>
-      </div>
-      <span class="legal">Legal</span>
-    </div>
-  </div>
-</footer>
-
-<style>
-/* ===== Footer Updated ===== */
-footer {
     border-top:1px solid #222;
     padding:1.5rem;
     color:#777;
@@ -283,11 +225,6 @@ footer {
     box-shadow: 0 0 6px #aa0000;
 }
 
-.legal {
-    font-size:0.85rem;
-    color:#aaa;
-}
-
 /* ===== Responsive ===== */
 @media(max-width:600px){
     .footer-container {
@@ -302,7 +239,56 @@ footer {
     }
 }
 </style>
+</head>
 
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="container">
+    <div class="nav-brand">
+      <a href="index">Feds</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index">Home</a></li>
+      <li><a href="profiles">Profiles</a></li>
+      <li><a href="hoa">HOA</a></li>
+      <li><a href="join">Discord</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div>
+    <h1>/Feds</h1>
+    <p>
+      The Official hub for the /feds com.
+    </p>
+    <div class="hero-buttons">
+      <a href="#">Projects</a>
+      <a href="#">Pastes</a>
+      <a href="join">Discord</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <span class="copyright">© 2026 fedsgov.shop</span>
+    <div class="footer-middle">
+      <div class="footer-buttons">
+        <a href="terms" class="footer-btn">Terms of Service</a>
+        <a href="privacy" class="footer-btn">Privacy Policy</a>
+        <a href="legal" class="footer-btn">Legal</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script>
 const hamburger = document.getElementById('hamburger');
