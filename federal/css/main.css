@@ -1,70 +1,3 @@
-:root {
-  --font-main: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial,
-    sans-serif, "Apple Symbols";
-
-  /* COLORS */
-  --headline-color: oklab(0.963963 -0.000228554 -0.00283051);
-  --form-background: oklab(0.321088 -0.000220731 -0.00934622);
-  --normal-text-color: oklab(0.786807 -0.0025776 -0.0110238);
-  --input-bg: oklab(0.23892 0.000131361 -0.00592163);
-  --input-color: oklab(0.899401 -0.00192499 -0.00481987);
-  --label-color: oklab(0.786807 -0.0025776 -0.0110238);
-  --required-color: rgb(242, 63, 66);
-  --btn-bg: rgb(88, 101, 242);
-  --btn-bg-hover: rgb(71, 82, 196);
-  --wandering-cubes-color: rgb(121, 131, 245);
-  --link-color: oklab(0.700834 -0.0780351 -0.1469);
-
-  --need-account: oklab(0.686679 -0.00398019 -0.0150182);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-@font-face {
-  font-family: "gg sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url(../assets/fonts/ggsans/ggsans-normal.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "gg sans";
-  font-style: normal;
-  font-weight: 500;
-  src: url(../assets/fonts/ggsans/ggsans-medium.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "gg sans";
-  font-style: normal;
-  font-weight: 600;
-  src: url(../assets/fonts/ggsans/ggsans-semibold.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "gg sans";
-  font-style: normal;
-  font-weight: 700;
-  src: url(../assets/fonts/ggsans/ggsans-bold.woff2) format("woff2");
-}
-
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hidden {
-  pointer-events: none !important;
-  display: none !important;
-}
-
 /* FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -80,6 +13,7 @@ body {
 }
 
 /* GENERIC TAGS STYLING */
+
 h1,
 p {
   line-height: 1.25;
@@ -91,6 +25,7 @@ h1 {
   font-weight: 600;
   font-style: normal;
   font-size: 24px;
+
   color: var(--headline-color);
 }
 
@@ -154,151 +89,174 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* helps centering on mobile */
 }
 
 .authBox {
   background: var(--form-background);
   width: 784px;
+  /* width: 100%; */
   padding: 32px;
   border-radius: 5px;
   height: max-content;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 32px;
   flex-wrap: nowrap;
-}
 
-.authBox .right-section .login-container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
+  .right-section {
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
 
-.authBox .right-section .login-container .qr-code {
-  width: 176px;
-  height: 176px;
-  background-color: white;
-  margin: 0 auto 20px;
-  position: relative;
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 32px;
-}
+      .qr-code {
+        width: 176px;
+        height: 176px;
+        background-color: white;
+        margin: 0 auto 20px;
+        position: relative;
+        padding: 8px;
+        border-radius: 4px;
+        margin-bottom: 32px;
 
-.authBox .right-section .login-container .qr-code svg {
-  width: 160px;
-  height: 160px;
-}
+        svg {
+          width: 160px;
+          height: 160px;
+        }
+      }
+      .qr-code img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 48px;
+        height: 48px;
+      }
 
-.authBox .right-section .login-container .qr-code img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-}
+      h2 {
+        margin-bottom: 8px;
+        line-height: 1.25;
+        font-weight: 600;
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.25;
+      }
+      a {
+        padding: 2px 16px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
 
-.authBox .main-form {
-  flex-basis: auto;
-  flex-shrink: 1;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  .main-form {
+    flex-basis: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-.authBox .main-form .main-form-header {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-}
+    .main-form-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
 
-.authBox .main-form form .input-groups {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 416px;
-}
+    form {
+      display: flex;
+      flex-direction: column;
 
-.authBox .main-form form .input-groups .email-wrapper,
-.authBox .main-form form .input-groups .password-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
+      .input-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 416px;
 
-.authBox .main-form form .input-groups label {
-  color: var(--label-color);
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1.3333;
-}
+        .email-wrapper,
+        .password-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          width: 100%;
 
-.authBox .main-form form .input-groups label span {
-  color: var(--required-color);
-}
+          label {
+            color: var(--label-color);
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 1.3333333333333333;
 
-.authBox .main-form form .forgot-password {
-  margin-top: 4px;
-  margin-bottom: 20px;
-}
+            span {
+              color: var(--required-color);
+            }
+          }
+        }
+      }
 
-.authBox .main-form form .forgot-password a {
-  font-size: 14px;
-  font-weight: 500;
-}
+      .forgot-password {
+        margin-top: 4px;
+        margin-bottom: 20px;
 
-.authBox .main-form form .login {
-  position: relative;
-  margin-bottom: 12px;
-}
+        a {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
 
-.authBox .main-form form .login button {
-  width: 416px;
-  background: var(--btn-bg);
-  color: #fff;
-  padding: 2px 16px;
-  border: none;
-  outline: none;
-  border-radius: 3px;
-  line-height: 24px;
-  font-family: inherit;
-  font-size: 16px;
-  height: 44px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.17s ease;
-}
+      .login {
+        position: relative;
+        button {
+          width: 416px;
+          background: var(--btn-bg);
+          color: #fff;
+          padding: 2px 16px;
+          border: none;
+          outline: none;
+          border-radius: 3px;
+          line-height: 24px;
+          font-family: inherit;
+          font-size: 16px;
+          height: 44px;
+          cursor: pointer;
+          font-weight: 500;
+          transition: background-color 0.17s ease;
+          &:hover {
+            background: var(--btn-bg-hover);
+          }
+          &[disabled="true"] {
+            cursor: not-allowed;
+            pointer-events: none;
+          }
+        }
 
-.authBox .main-form form .login button:hover {
-  background: var(--btn-bg-hover);
-}
+        margin-bottom: 12px;
+      }
 
-.authBox .main-form form .login button[disabled="true"] {
-  cursor: not-allowed;
-  pointer-events: none;
-}
+      .small-register {
+        display: flex;
+        gap: 4px;
 
-.authBox .main-form form .small-register {
-  display: flex;
-  gap: 4px;
-}
-
-.authBox .main-form form .small-register a {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.authBox .main-form form .small-register span {
-  color: var(--need-account);
-  font-size: 14px;
-  font-weight: 400;
+        a {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        span {
+          color: var(--need-account);
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
 }
 
 /* SPINNER */
@@ -313,7 +271,6 @@ a:hover {
   height: 100%;
   margin: 0;
 }
-
 .spinner .pulsingEllipsis {
   height: auto;
   width: 28px;
@@ -321,7 +278,6 @@ a:hover {
   justify-content: center;
   position: relative;
 }
-
 .spinner .inner {
   align-items: center;
   contain: paint;
@@ -338,7 +294,15 @@ a:hover {
   opacity: 0.3;
 }
 
-/* QR code spinner */
+/* Qr code spinner */
+.spinner.qrCode-spinner {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  image-rendering: pixelated;
+}
+
 .spinner.qrCode-spinner .inner {
   position: relative;
   display: inline-flex;
@@ -391,146 +355,5 @@ a:hover {
   }
   100% {
     transform: rotate(-360deg);
-  }
-}
-
-/* ===== MOBILE RESPONSIVENESS ===== */
-@media (max-width: 1024px) {
-  .authBox {
-    flex-direction: column;
-    width: 90%;
-    padding: 24px;
-    gap: 24px;
-  }
-
-  .main-form .input-groups {
-    width: 100%;
-  }
-
-  .login button {
-    width: 100%;
-  }
-
-  .qr-code {
-    width: 140px;
-    height: 140px;
-  }
-
-  .qr-code svg {
-    width: 120px;
-    height: 120px;
-  }
-
-  .qr-code img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .main-form-header h2 {
-    font-size: 20px;
-  }
-
-  .main-form-header p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .authBox {
-    padding: 16px;
-  }
-
-  .qr-code {
-    width: 120px;
-    height: 120px;
-  }
-
-  .qr-code svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  .qr-code img {
-    width: 32px;
-    height: 32px;
-  }
-
-  h1, h2 {
-    font-size: 20px;
-  }
-
-  p, label, .small-register a {
-    font-size: 14px;
-  }
-
-  .login-page {
-    overflow-y: auto;
-  }
-}
-/* ===== MOBILE RESPONSIVENESS ===== */
-@media (max-width: 1024px) {
-  .authBox {
-    flex-direction: column;
-    width: 90%;
-    padding: 24px;
-    gap: 24px;
-  }
-
-  /* Hide QR code on mobile/tablet */
-  .right-section .login-container {
-    display: none;
-  }
-
-  .main-form .input-groups {
-    width: 100%;
-  }
-
-  .login button {
-    width: 100%;
-  }
-
-  .main-form-header h2 {
-    font-size: 20px;
-  }
-
-  .main-form-header p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .authBox {
-    padding: 16px;
-    width: 95%;
-    gap: 16px;
-  }
-
-  /* Keep inputs full width and nice height */
-  .main-form .input-groups {
-    width: 100%;
-    gap: 16px;
-  }
-
-  input {
-    font-size: 16px;
-    height: 42px;
-  }
-
-  .login button {
-    width: 100%;
-    font-size: 16px;
-    height: 44px;
-  }
-
-  h1, h2 {
-    font-size: 20px;
-  }
-
-  p, label, .small-register a {
-    font-size: 14px;
-  }
-
-  .login-page {
-    overflow-y: auto;
   }
 }

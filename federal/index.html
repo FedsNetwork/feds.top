@@ -92,42 +92,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
     <script src="./js/script.js"></script>
-    <script>
-function scaleElements() {
-  const qr = document.querySelector('.qr-code');
-  const bg = document.querySelector('.bg');
-
-  if (!qr || !bg) return;
-
-  const vh = window.innerHeight;
-  const vw = window.innerWidth;
-
-  // Scale QR code to max 35% of viewport width, min 100px
-  const qrSize = Math.min(Math.max(vw * 0.35, 100), 176);
-  qr.style.width = qrSize + 'px';
-  qr.style.height = qrSize + 'px';
-
-  const svg = qr.querySelector('svg');
-  if (svg) {
-    svg.style.width = (qrSize - 16) + 'px';
-    svg.style.height = (qrSize - 16) + 'px';
-  }
-
-  const img = qr.querySelector('img');
-  if (img) {
-    img.style.width = (qrSize * 0.28) + 'px';
-    img.style.height = (qrSize * 0.28) + 'px';
-  }
-
-  // Optional: adjust background to fill viewport
-  bg.style.width = vw + 'px';
-  bg.style.height = vh + 'px';
-}
-
-// Run on load and resize
-window.addEventListener('load', scaleElements);
-window.addEventListener('resize', scaleElements);
-</script>
 </body>
 
 </html>
