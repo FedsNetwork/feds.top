@@ -1,292 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--    
-    ,---,.                                      ___                       
-  ,'  .' |                ,---,               ,--.'|_           ,-.----.  
-,---.'   |              ,---.'|               |  | :,'   ,---.  \    /  \ 
-|   |   .'              |   | :  .--.--.      :  : ' :  '   ,'\ |   :    |
-:   :  :     ,---.      |   | | /  /    '   .;__,'  /  /   /   ||   | .\ :
-:   |  |-,  /     \   ,--.__| ||  :  /`./   |  |   |  .   ; ,. :.   : |: |
-|   :  ;/| /    /  | /   ,'   ||  :  ;_     :__,'| :  '   | |: :|   |  \ :
-|   |   .'.    ' / |.   '  /  | \  \    `.    '  : |__'   | .; :|   : .  |
-'   :  '  '   ;   /|'   ; |:  |  `----.   \   |  | '.'|   :    |:     |`-'
-|   |  |  '   |  / ||   | '/  ' /  /`--'  /__ ;  :    ;\   \  / :   : :   
-|   :  \  |   :    ||   :    :|'--'.     /  .\|  ,   /  `----'  |   | :   
-|   | ,'   \   \  /  \   \  /    `--'---'\  ; |---`-'           `---'.|   
-`----'      `----'    `----'              `--"                    `---`
-            t.me/fedschannel | t.me/FederalVile | .gg/carved
--->
-    <!-- ===== Meta ===== -->
-<meta charset="UTF-8">
-<title>Carved | Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The official hub for the /Carved com offshoots, projects, and pastes.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feds | Redirecting</title>
+  <meta name="description" content="Site is disbanded.">
 
-<meta property="og:title" content="Carved">
-<meta property="og:description" content="The official hub for the /Carved com offshoots, projects, and pastes.">
-<meta property="og:image" content="https://feds.top/imgs/carvedembed.jpeg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://feds.top/">
+  <!-- Open Graph / Discord Preview -->
+  <meta property="og:title" content="Feds | Redirecting">
+  <meta property="og:description" content="Site is disbanded.">
+  <meta property="og:image" content="https://feds.top/imgs/">
+  <meta property="og:url" content="https://feds.top/">
+  <meta property="og:type" content="website">
 
-<meta name="theme-color" content="#330000">
-<link rel="icon" href="assets/images/favi.ico">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Feds | Redirecting">
+  <meta name="twitter:description" content="Site is disbanded.">
+  <meta name="twitter:image" content="https://feds.top/imgs/">
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- ===== Styles ===== -->
-    <style>
-        /* ===== Base ===== */
-        * { box-sizing: border-box; }
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
-            color: #fff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* ===== Navbar ===== */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            background: #000;
-            border-bottom: 2px solid #222;
-            padding: 0.5rem 1rem;
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-brand a {
-            font-size: 1.75rem;
-            font-weight: 600;
-            text-decoration: none;
-            animation: rainbow 5s infinite;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 1rem;
-            list-style: none;
-        }
-
-        nav ul a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-
-        nav ul a:hover {
-            animation: rainbow 3s infinite;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 20px;
-            height: 2px;
-            background: #fff;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                right: 1rem;
-                top: 55px;
-                background: #000;
-                border: 1px solid #222;
-                border-radius: 4px;
-                padding: 0.5rem;
-                flex-direction: column;
-                width: 150px;
-            }
-
-            nav ul.active { display: flex; }
-            .hamburger { display: flex; }
-        }
-
-        /* ===== Hero ===== */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            animation: rainbow 6s infinite;
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            color: #b0b0b0;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .hero-buttons a {
-            padding: 0.75rem 1.5rem;
-            background: #0e0e0e;
-            border: 1px solid #333;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-
-        .hero-buttons a:hover {
-            border-color: #666;
-        }
-
-        /* ===== Footer ===== */
-        footer {
-            border-top: 1px solid #222;
-            padding: 1.5rem;
-            font-size: 0.85rem;
-            color: #777;
-        }
-
-        .footer-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .footer-buttons {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .footer-btn {
-            padding: 0.35rem 0.75rem;
-            background: #0e0e0e;
-            border: 1px solid #222;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #fff;
-            transition: 0.3s;
-        }
-
-        .footer-btn:hover {
-            border-color: #aa0000;
-            background: #1a0a0a;
-            box-shadow: 0 0 6px #aa0000;
-        }
-
-        @keyframes rainbow {
-            0% { color: red; }
-            17% { color: orange; }
-            33% { color: yellow; }
-            50% { color: green; }
-            67% { color: blue; }
-            84% { color: purple; }
-            100% { color: red; }
-        }
-    </style>
+  <meta name="theme-color" content="#330000">
 </head>
-
 <body>
+  <p>Redirecting to <a href="https://extorting.me">new site, feds.top was disbanded.</a>...</p>
 
-    <!-- ===== Navbar ===== -->
-    <nav>
-        <div class="nav-container">
-            <div class="nav-brand"><a href="index">Carved</a></div>
-
-            <div class="hamburger" id="hamburger">
-                <div></div><div></div><div></div>
-            </div>
-
-            <ul id="nav-links">
-                <li><a href="index">Home</a></li>
-                <li><a href="hoa">HOA</a></li>
-                <li><a href="telegram">Telegram</a></li>
-                <li><a href="join">Discord</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- ===== Hero ===== -->
-    <section class="hero">
-        <div>
-            <h1>/Carved</h1>
-            <p>The Official hub for the Carved com & offshoots.</p>
-            <div class="hero-buttons">
-                <a href="projects">Projects</a>
-                <a href="https://doxbin.net/user/FederalVile">Pastes</a>
-                <a href="join">Discord</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== Footer ===== -->
-    <footer>
-        <div class="footer-container">
-            <span>© 2026 feds.top</span>
-            <div class="footer-buttons">
-                <a href="/legal/tos" class="footer-btn">Terms</a>
-                <a href="/legal/privacy" class="footer-btn">Privacy</a>
-                <a href="/legal/" class="footer-btn">Legal</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ===== Script ===== -->
- <script>
-  // ===== Hamburger Menu =====
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  // ===== Disable Right-Click & Inspect =====
-  document.addEventListener('contextmenu', e => e.preventDefault());
-
-  document.addEventListener('keydown', e => {
-    const blockedKeys = ['I', 'C', 'J'];
-    if (
-      e.key === 'F12' ||
-      (e.ctrlKey && e.shiftKey && blockedKeys.includes(e.key.toUpperCase())) ||
-      (e.ctrlKey && e.key.toUpperCase() === 'U')
-    ) {
-      e.preventDefault();
-      alert('Inspecting is disabled!');
-    }
-  });
-</script>
+  <!-- Instant redirect for users, tiny delay ensures Discord reads OG tags -->
+  <script>
+    // Only 1ms delay, effectively instant
+    setTimeout(() => window.location.replace("https://extorting.me"), 1);
+  </script>
 </body>
 </html>
